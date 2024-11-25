@@ -1,0 +1,381 @@
+/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+
+  line-height: 1.6;
+  background-color: #000;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 16, 7, 0.751);
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2db3f9;
+  cursor: pointer;
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #2db3f9;
+}
+
+.navbar .menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.navbar .menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .navbar .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('Assests/1282\ 2.png') no-repeat center center/cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); /* Dark overlay */
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 6.5rem;
+  line-height: 1.2;
+}
+
+.hero-content h1 span.highlight {
+  color: #2db3f9;
+}
+
+.hero-content p {
+  font-size: 2rem;
+}
+
+/* Gallery Section */
+.gallery {
+  background: #111;
+  padding: 3rem;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s;
+ border-radius: 6px;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+ 
+}
+
+.gallery-item p {
+  margin-top: 0.5rem;
+}
+
+/* Cards Section */
+.cards {
+  background: #222;
+  padding: 3rem;
+}
+
+.cards h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #333;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: #444;
+  cursor: pointer;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background: #111;
+  padding: 3rem;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.testimonial {
+  max-width: 600px;
+  background: #222;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  background: #333;
+  cursor: pointer;
+}
+
+.testimonial p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial span {
+  font-style: italic;
+  color: #2db3f9;
+}
+
+/* Contact Section */
+.contact {
+  background: #333;
+  padding: 3rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 150px;
+}
+
+.contact-form button {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background: #2db3f9;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #1a87c5;
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  background: #000;
+  color: #666;
+  padding: 1rem;
+  position: relative;
+}
+
+.social-icons img {
+  width: 23px;
+  height: 23px;
+  margin:  10px;
+  cursor: pointer;
+}
+.social-icons img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+/* Responsive Design */
+
+/* Adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.8rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .testimonial-container {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 90%;
+  }
+
+  .cards h2,
+  .gallery h2,
+  .testimonials h2,
+  .contact h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .testimonial {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+/* Smooth Scrolling for Navbar Links */
+html {
+  scroll-behavior: smooth;
+}
