@@ -1,4 +1,4 @@
-# Travel and Explore Website (https://travel-exp.netlify.app/)
+# Travel and Explore Website (https://het2576.github.io/Tavel_explore/)
 
 ## Description
 The **Travel and Explore** website is a responsive, visually appealing platform designed to inspire and assist travelers. It features:
