@@ -15,6 +15,7 @@ body {
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -63,6 +64,26 @@ body {
   width: 25px;
   height: 3px;
   background: #fff;
+  transition: transform 0.3s, background 0.3s;
+}
+
+/* Hamburger active state */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Active link style */
+.nav-links a.active {
+  color: #2db3f9;
+  font-weight: bold;
 }
 
 /* Responsive Navbar */
@@ -70,7 +91,7 @@ body {
   .navbar .nav-links {
     display: none;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(5, 16, 7, 0.751);
     position: absolute;
     top: 100%;
     right: 0;
@@ -86,7 +107,6 @@ body {
     display: flex;
   }
 }
-
 /* Hero Section */
 .hero {
   position: relative;
@@ -162,6 +182,46 @@ body {
 
 .gallery-item p {
   margin-top: 0.5rem;
+}
+
+/* Gallery Tabs */
+.gallery-tabs {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery-tabs .tab {
+  padding: 0.5rem 1rem;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.gallery-tabs .tab.active,
+.gallery-tabs .tab:hover {
+  background: #2db3f9;
+  transform: scale(1.05);
+}
+
+/* Hero Section Social Icons */
+.hero-social {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.hero-social img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+.hero-social img:hover {
+  transform: scale(1.2);
 }
 
 /* Cards Section */
