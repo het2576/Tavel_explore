@@ -17,7 +17,7 @@
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="menu-toggle">
+    <div class="menu-toggle" id="menu-toggle">
       <span></span>
       <span></span>
       <span></span>
@@ -30,26 +30,39 @@
     <div class="hero-content">
       <h1><span>Explore and</span> <span class="highlight">Travel</span></h1>
       <p>The World Awaits</p>
+      <div class="social-icons hero-social">
+        <img src="Assests/facebook (1) 1.png" alt="Facebook">
+        <img src="Assests/twitter 1.png" alt="Twitter">
+        <img src="Assests/instagram 1.png" alt="Instagram">
+      </div>
     </div>
   </section>
 
   <!-- Gallery Section -->
   <section id="gallery" class="gallery">
     <h2>Gallery</h2>
+    <!-- Navigation Tabs -->
+    <div class="gallery-tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="waterfall">Waterfalls</button>
+      <button class="tab" data-filter="mountain">Mountains</button>
+      <button class="tab" data-filter="beach">Beaches</button>
+    </div>
+
     <div class="gallery-container">
-      <div class="gallery-item">
+      <div class="gallery-item" data-category="waterfall">
         <img src="https://plus.unsplash.com/premium_photo-1708226124890-75b3b8fcb0f1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 1">
         <p>Beautiful Waterfall</p>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-category="mountain">
         <img src="https://plus.unsplash.com/premium_photo-1700500733511-b42dfae2897a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 2">
         <p>Mountain View</p>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-category="lake">
         <img src="https://images.unsplash.com/photo-1723139988821-03d349a73abe?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 3">
         <p>Serene Lake</p>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-category="beach">
         <img src="https://images.unsplash.com/photo-1583795884587-1a45f3b83d33?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 4">
         <p>Sunny Beach</p>
       </div>
@@ -112,5 +125,38 @@
     </div>
   </footer>
 
+<script>
+  // JavaScript for Hamburger Menu
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const navLinksItems = document.querySelectorAll(".nav-links li a");
+
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");
+  navLinks.classList.toggle("active");
+});
+
+navLinksItems.forEach(link => {
+    link.addEventListener("click", () => {
+      menuToggle.classList.remove("active");
+      navLinks.classList.remove("active");
+    });
+  });
+
+  // Smooth scrolling for menu links
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault(); // Prevent default link behavior
+    const targetId = e.target.getAttribute('href').slice(1); // Get the target section ID
+    const targetElement = document.getElementById(targetId);
+
+    // Scroll to the section smoothly
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+
+
+</script>
 </body>
 </html>
